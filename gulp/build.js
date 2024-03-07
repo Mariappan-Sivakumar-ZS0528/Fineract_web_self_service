@@ -32,7 +32,7 @@ gulp.task('partials', function () {
         .pipe(gulp.dest(paths.dist + '/js'))
 });
 
-gulp.task('html', function () {
+gulp.task('html', ['partials'], function () {
 
     return gulp.src(paths.src + '/*.html')
         .pipe($.minifyHtml({
@@ -42,7 +42,7 @@ gulp.task('html', function () {
         }))
         .pipe(gulp.dest(paths.dist + '/'))
         .pipe($.size({title: paths.dist + '/', showFiles: true}));
-}, ['partials']);
+});
 
 gulp.task('vendor', function () {
     var jsFilter = $.filter('**/*.js');
@@ -63,7 +63,7 @@ gulp.task('app-js', function () {
         .pipe(gulp.dest(paths.dist));
 })
 
-gulp.task('js', function () {
+gulp.task('js', ['vendor', 'partials', 'app-js'], function () {
 
     return gulp.src([
         paths.src + '/src/**/*.js',
@@ -76,7 +76,7 @@ gulp.task('js', function () {
             "format": "{name}.{hash:8}{ext}"
         }))
         .pipe(gulp.dest(paths.dist + '/js'));
-}, ['vendor', 'partials', 'app-js'])
+})
 
 gulp.task('images', function () {
     return gulp.src(paths.src + '/assets/images/**/*')
