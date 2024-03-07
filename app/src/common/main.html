@@ -1,0 +1,148 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+    <div layout="col" layout-align="start end" layout-padding class="sidenav-header">
+        <div layout="col" flex>
+            <div class="sidenav-content">
+                <md-icon md-menu-origin md-svg-src="assets/images/ic_person_white_24px.svg" ng-show="vm.profileImage == null"></md-icon>
+                <img class="profile-img" ng-src="{{ vm.profileImage }}" ng-hide="vm.profileImage == null" />
+                <h1 class="sidenav-title md-title">{{'nav.msg.welcome' | translate}} {{vm.profile.displayName}}</h1>
+            </div>
+        </div>
+    </div>
+    <md-content id="sidebar-menu">
+        <!-- <md-button ng-click="close()" class="md-primary" hide-gt-md>
+          Close
+        </md-button> -->
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Dashboard')" ui-sref-active="md-warn" ui-sref=".dashboard"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">home</i> {{ 'nav.label.dashboard' | translate}}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Accounts')" ui-sref-active="md-warn" ui-sref=".accounts"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">account_balance_wallet</i> {{ 'nav.label.accounts' | translate}}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Recent Transactions')" ui-sref-active="md-warn"
+                   ui-sref=".recenttransactions" class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">trending_up</i> {{ 'nav.label.recenttransactions' | translate}}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Charges')" ui-sref-active="md-warn" ui-sref=".charges"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">attach_money</i> {{ 'nav.label.charges' | translate }}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Transfers')" ui-sref-active="md-warn" ui-sref=".transfers"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">attach_money</i> {{ 'nav.label.transfers' | translate }}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('TPT Transfers')" ui-sref-active="md-warn" ui-sref=".tpt"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">attach_money</i> {{ 'nav.label.tpttransfers' | translate }}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Beneficiaries')" ui-sref-active="md-warn" ui-sref=".beneficiarieslist"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">group</i> {{ 'nav.label.beneficiaries' | translate }}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Reports')" ui-sref-active="md-warn" ui-sref=".reports"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">ballot</i> {{ 'nav.label.reports' | translate }}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Apply Loan')" ui-sref-active="md-warn" ui-sref=".applyloan"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">assignment</i> {{ 'nav.label.applyloan' | translate }}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Apply Savings')" ui-sref-active="md-warn" ui-sref=".applysavings"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">assignment</i> {{ 'nav.label.applysavings' | translate }}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Apply Shares')" ui-sref-active="md-warn" ui-sref=".applyshares"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">assignment</i> {{ 'nav.label.applyshares' | translate }}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('About Us')" ui-sref-active="md-warn" ui-sref=".aboutus"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">info</i> {{ 'nav.label.aboutus' | translate }}
+            </div>
+        </md-button>
+        <md-divider></md-divider>
+        <md-button ng-click="vm.selectItem('Help')" ui-sref-active="md-warn" ui-sref=".help"
+                   class="sidenav-icon">
+            <div class="md-tile-content">
+                <i hide-sm hide-md class="material-icons md-18">help</i> {{ 'nav.label.help' | translate }}
+            </div>
+        </md-button>
+    </md-content>
+</md-sidenav>
+
+<div layout="column" flex>
+    <md-toolbar md-theme="default" layout="row" layout-align="start center">
+        <md-button hide-gt-sm ng-click="vm.toggleItemsList()" aria-label="Menu">
+            <i class="material-icons">menu</i>
+        </md-button>
+        <div flex></div>
+        <md-menu md-position-mode="target-right target">
+            {{vm.userDetails.username}}
+            <md-button aria-label="Open logout menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+                <md-icon md-menu-origin md-svg-src="assets/images/ic_person_white_24px.svg"></md-icon>
+            </md-button>
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button ng-click="vm.selectItem('Profile');" ui-sref=".profile">
+                        <div layout="row">
+                            <p flex>Profile</p>
+                        </div>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.logout();">
+                        <div layout="row">
+                            <p flex>Logout</p>
+                        </div>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+
+        <!-- <md-button hide-sm class="toolbar-button" aria-label="Notifications">
+          <i class="material-icons">notifications</i>
+          <span class="notifications-label">7</span>
+        </md-button> -->
+
+    </md-toolbar>
+
+    <md-content flex class="page-content">
+        <div ui-view></div>
+    </md-content>
+</div>
